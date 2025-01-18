@@ -35,6 +35,9 @@ desktop.ini
 
 # UiPath project user-specific settings
 *.local
+*.settings
+*.objects
+*.tmh
 *.suo
 *.user
 *.cache
