@@ -4,6 +4,7 @@
   "description": "A process to extract product details, including name, price, free shipping status, and URL, from ecommerce and export them to an Excel spreadsheet.",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Excel.Activities": "[2.25.1-preview]",
     "UiPath.System.Activities": "[24.10.7]",
     "UiPath.UIAutomation.Activities": "[24.12.4-preview]"
   },
