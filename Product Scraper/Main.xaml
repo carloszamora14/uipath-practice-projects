@@ -125,7 +125,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="768.0000000000001,6018.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="768.0000000000001,6612" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ProductName" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ProductsData" />
@@ -141,13 +141,13 @@
         <OutArgument x:TypeArguments="x:String">[ProductName]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Amazon.com" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710.4,4583.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="470126bf-68b5-4c8a-af93-fd83b830bbce" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Amazon.com" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710.4,5176.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="470126bf-68b5-4c8a-af93-fd83b830bbce" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="676.8,4334.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="676.8,4928" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="ExtractedChildren" />
@@ -213,13 +213,13 @@
               </ui:FindChildren.Target>
             </ui:FindChildren>
             <ui:BuildDataTable DataTable="[dt_ProductsData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="643.2,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Shipping&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Url&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each CurrentChildren" sap:VirtualizedContainerService.HintSize="643.2,3529.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" MaxIterations="10" Values="[ExtractedChildren]">
+            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each CurrentChildren" sap:VirtualizedContainerService.HintSize="643.2,4123.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" MaxIterations="10" Values="[ExtractedChildren]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:UiElement">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:UiElement" Name="CurrentChildren" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="641.6,3406.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="641.6,4000" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="CardElements" />
                       <Variable x:TypeArguments="x:String" Name="Title" />
@@ -247,13 +247,13 @@
                         </ui:Target>
                       </ui:FindChildren.Target>
                     </ui:FindChildren>
-                    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each CurrentCardElement" sap:VirtualizedContainerService.HintSize="608,3016.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[CardElements]">
+                    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each CurrentCardElement" sap:VirtualizedContainerService.HintSize="608,3610.4" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[CardElements]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="ui:UiElement">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ui:UiElement" Name="CurrentCardElement" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="606.4,2886.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="606.4,3480" sap2010:WorkflowViewState.IdRef="Sequence_8">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="ClassName" />
                               <Variable x:TypeArguments="x:String" Name="Field" />
@@ -282,15 +282,15 @@
                                 <InArgument x:TypeArguments="x:String">[ClassName.Substring(ClassName.LastIndexOf("_"C) + 1)]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <If Condition="[RequiredFields.Contains(Field)]" sap:VirtualizedContainerService.HintSize="572.8,2599.2" sap2010:WorkflowViewState.IdRef="If_2">
+                            <If Condition="[RequiredFields.Contains(Field)]" sap:VirtualizedContainerService.HintSize="572.8,3192.8" sap2010:WorkflowViewState.IdRef="If_2">
                               <If.Then>
-                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="571.2,2380" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="571.2,2973.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:IfElseIfV2 Condition="[Field = &quot;price&quot;]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="537.6,1539.2" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                                  <ui:IfElseIfV2 Condition="[Field = &quot;price&quot;]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="537.6,2132.8" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
                                     <ui:IfElseIfV2.Else>
                                       <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="536,220.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                         <sap:WorkflowViewStateService.ViewState>
@@ -309,6 +309,7 @@
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <Sequence DisplayName="Extract Shipping Sequence" sap:VirtualizedContainerService.HintSize="502.4,924.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
@@ -386,23 +387,23 @@
                                       </sc:BindingList>
                                     </ui:IfElseIfV2.ElseIfs>
                                     <ui:IfElseIfV2.Then>
-                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,108" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,701.6" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="Extract Price Sequence" sap:VirtualizedContainerService.HintSize="502.4,48" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                        <Sequence DisplayName="Extract Price Sequence" sap:VirtualizedContainerService.HintSize="502.4,641.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="PriceTag" />
                                           </Sequence.Variables>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:FindChildren Children="[PriceTag]" DisplayName="Find Children" Filter="&lt;webctrl class='*money-amount__fraction' /&gt;" sap:VirtualizedContainerService.HintSize="417.6,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_3" Scope="FIND_DESCENDANTS">
+                                          <ui:FindChildren Children="[PriceTag]" DisplayName="Find Children" Filter="&lt;webctrl class='*price__current' /&gt;&lt;webctrl class='*money-amount__fraction' /&gt;" sap:VirtualizedContainerService.HintSize="417.6,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_3" Scope="FIND_DESCENDANTS">
                                             <ui:FindChildren.Target>
                                               <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[CurrentCardElement]" Id="93911b3a-d28d-4efe-b3a4-e4dc69e627b6">
                                                 <ui:Target.TimeoutMS>
@@ -502,7 +503,7 @@
                         </ActivityAction>
                       </ui:ForEach.Body>
                     </ui:ForEach>
-                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {CurrentDataRow(&quot;Title&quot;), CurrentDataRow(&quot;Price&quot;), CurrentDataRow(&quot;Shipping&quot;), CurrentDataRow(&quot;Url&quot;)}]" DataTable="[dt_ProductsData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="608,211.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {CurrentDataRow(&quot;Title&quot;), CurrentDataRow(&quot;Price&quot;), If(CurrentDataRow.ContainsKey(&quot;Shipping&quot;), CurrentDataRow(&quot;Shipping&quot;), &quot;&quot;), CurrentDataRow(&quot;Url&quot;)}]" DataTable="[dt_ProductsData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="608,211.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEach.Body>
@@ -581,7 +582,7 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="438.4,192" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[dt_ProductsData]" />
                     <ueab:AutoFitX Columns="True" DisplayName="Autofit Range" sap:VirtualizedContainerService.HintSize="438.4,148" sap2010:WorkflowViewState.IdRef="AutoFitX_1" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" Rows="False" />
-                    <ueab:FormatRangeX DisplayName="Format Cells" sap:VirtualizedContainerService.HintSize="438.4,162.4" sap2010:WorkflowViewState.IdRef="FormatRangeX_1" Range="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1:C1&quot;)]">
+                    <ueab:FormatRangeX DisplayName="Format Cells" sap:VirtualizedContainerService.HintSize="438.4,162.4" sap2010:WorkflowViewState.IdRef="FormatRangeX_1" Range="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1:D1&quot;)]">
                       <ueab:FormatRangeX.Alignment>
                         <ui:AlignmentOptions HorizontalAlignment="xlHAlignGeneral" VerticalAlignment="xlVAlignBottom" WrapText="False" />
                       </ueab:FormatRangeX.Alignment>
