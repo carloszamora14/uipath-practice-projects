@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ExtractProductsData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ExtractProductsData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_ProductName" Type="InArgument(x:String)" />
     <x:Property Name="out_dt_ProductsData" Type="OutArgument(sd:DataTable)" />
@@ -44,6 +44,7 @@
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -120,24 +121,24 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="768.0000000000001,3451.2" sap2010:WorkflowViewState.IdRef="Sequence_39">
+  <Sequence sap:VirtualizedContainerService.HintSize="699.2,5679.2" sap2010:WorkflowViewState.IdRef="Sequence_39">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge MercadoLibre.com" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="622.4,3428" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="470126bf-68b5-4c8a-af93-fd83b830bbce" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge MercadoLibre.com" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="651.2,5952.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="470126bf-68b5-4c8a-af93-fd83b830bbce" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="588.8,3188" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="617.6,5736" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="SearchResults" />
               <Variable x:TypeArguments="x:Int32" Name="MaxIterations">
                 <Variable.Default>
-                  <Literal x:TypeArguments="x:Int32" Value="5" />
+                  <Literal x:TypeArguments="x:Int32" Value="100" />
                 </Variable.Default>
               </Variable>
             </Sequence.Variables>
@@ -147,7 +148,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Input Search" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="555.2,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="470126bf-68b5-4c8a-af93-fd83b830bbce" Text="[in_ProductName]" Version="V4">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Input Search" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="584,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="470126bf-68b5-4c8a-af93-fd83b830bbce" Text="[in_ProductName]" Version="V4">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="mercadolibre.com.mx" CVScreenId="bc840251-2621-417a-b203-717264fa7c3f" ContentHash="0IKw_V8L30evgu3XIZcidA" CvElementArea="446, 110, 740, 53" CvType="InputBox" DesignTimeRectangle="449, 111, 735, 50" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl tag='INPUT' class='nav-search-input' parentclass='nav-search' type='text' /&gt;" Guid="6c728e33-50f4-46be-b176-221a9c9679aa" InformativeScreenshot="812bac93f4f036123397b5baf4e361c0.png" Reference="B6OBFm5gfEWaeihw9JtP7w/Yg2ksSipbUeONf9J21DnOw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Mercado Libre México - Envíos Gratis en el día' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -168,7 +169,7 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Search Button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="555.2,225.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="470126bf-68b5-4c8a-af93-fd83b830bbce" Version="V4">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Search Button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="584,225.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="470126bf-68b5-4c8a-af93-fd83b830bbce" Version="V4">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="mercadolibre.com.mx" CVScreenId="3417513b-5c1b-40bb-ba54-e6e17dc21990" ContentHash="a0dOUFkX-k-k_uFGW1Yc_Q" CvElementArea="446, 110, 740, 53" CvType="InputBox" DesignTimeRectangle="1127, 111, 58, 50" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='nav-search-btn' aaname='' /&gt;" Guid="ed4e7af9-58e3-4a8a-ae0f-e3ce5eb7f229" InformativeScreenshot="513a99f14ce1d0399fbd24e7b039423b.png" Reference="B6OBFm5gfEWaeihw9JtP7w/vefbywLm_k6dnVVo3OMJdw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Mercado Libre México - Envíos Gratis en el día' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -189,9 +190,9 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <ui:FindChildren Children="[SearchResults]" DisplayName="Find Search Results" Filter="&lt;webctrl class='poly-card__content' tag='DIV'/&gt;" sap:VirtualizedContainerService.HintSize="555.2,139.2" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
+            <ui:FindChildren Children="[SearchResults]" DisplayName="Find Search Results" Filter="&lt;webctrl class='poly-card__content' tag='DIV'/&gt;" sap:VirtualizedContainerService.HintSize="584,139.2" sap2010:WorkflowViewState.IdRef="FindChildren_5" Scope="FIND_DESCENDANTS">
               <ui:FindChildren.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="da39ea12-bda1-44b8-a689-f0ac98fd1de1" InformativeScreenshot="0af1fd185f006c4bf6d62488f870a078" Selector="&lt;html app='msedge.exe' /&gt;&lt;webctrl parentid='root-app' tag='SECTION' class='ui-search-results *' parentclass='ui-search-main *' /&gt;&lt;webctrl tag='OL' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="da39ea12-bda1-44b8-a689-f0ac98fd1de1" InformativeScreenshot="0af1fd185f006c4bf6d62488f870a078" Selector="&lt;html app='msedge.exe' /&gt;&lt;webctrl omit:parentid='root-app' tag='SECTION' class='ui-search-results*' parentclass='ui-search-main*' /&gt;&lt;webctrl tag='OL' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -201,19 +202,38 @@
                 </ui:Target>
               </ui:FindChildren.Target>
             </ui:FindChildren>
-            <ui:BuildDataTable DataTable="[out_dt_ProductsData]" DisplayName="Build Products Data Table" sap:VirtualizedContainerService.HintSize="555.2,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Shipping&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Url&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each CurrentSearchResult" sap:VirtualizedContainerService.HintSize="555.2,2383.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" MaxIterations="[MaxIterations]" Values="[SearchResults]">
+            <If Condition="[SearchResults.Count = 0]" DisplayName="If Not Search Results Found" sap:VirtualizedContainerService.HintSize="584,592.8" sap2010:WorkflowViewState.IdRef="If_8">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,227.2" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message Not Search Results" sap:VirtualizedContainerService.HintSize="382.4,167.2" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;There were no search results&quot;]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,227.2" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message Number of Search Results" sap:VirtualizedContainerService.HintSize="382.4,167.2" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;There were &quot; + SearchResults.Count.ToString + &quot; results found&quot;]" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:BuildDataTable DataTable="[out_dt_ProductsData]" DisplayName="Build Products Data Table" sap:VirtualizedContainerService.HintSize="584,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Shipping&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Url&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+            <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each CurrentSearchResult" sap:VirtualizedContainerService.HintSize="584,4338.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" MaxIterations="[MaxIterations]" Values="[SearchResults]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ui:UiElement">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:UiElement" Name="CurrentSearchResult" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,2260" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="582.4,4215.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="Title" />
-                      <Variable x:TypeArguments="x:String" Name="Price" />
-                      <Variable x:TypeArguments="x:String" Name="Shipping" />
-                      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[New Dictionary(Of String, String)]" Name="CurrentRow" />
+                      <Variable x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="ContentCard" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
@@ -221,7 +241,15 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:FindChildren Children="[ContentCard]" DisplayName="Find Content Inside CurrentSearchResult" Filter="&lt;webctrl class='poly-component__*' /&gt;" sap:VirtualizedContainerService.HintSize="520,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_DESCENDANTS">
+                    <Assign DisplayName="Assign Empty Data Row" sap:VirtualizedContainerService.HintSize="548.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="sd:DataRow">[CurrentRow]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="sd:DataRow">[out_dt_ProductsData.NewRow]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:FindChildren Children="[ContentCard]" DisplayName="Find Content Inside CurrentSearchResult" Filter="&lt;webctrl class='poly-component__*' /&gt;" sap:VirtualizedContainerService.HintSize="548.8,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_DESCENDANTS">
                       <ui:FindChildren.Target>
                         <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[CurrentSearchResult]" Id="9cd777d7-c4ad-408d-a809-096a0a781de8">
                           <ui:Target.TimeoutMS>
@@ -233,13 +261,34 @@
                         </ui:Target>
                       </ui:FindChildren.Target>
                     </ui:FindChildren>
-                    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each CurrentCardElement" sap:VirtualizedContainerService.HintSize="520,1870.4" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ContentCard]">
+                    <If Condition="[ContentCard.Count = 0]" DisplayName="If Content Card Has No Elements" sap:VirtualizedContainerService.HintSize="548.8,455.2" sap2010:WorkflowViewState.IdRef="If_9">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,227.2" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Content Card Has No Elements Message" sap:VirtualizedContainerService.HintSize="382.4,167.2" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn" Message="[&quot;Current content card has no elements matching the selector&quot;]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each CurrentCardElement" sap:VirtualizedContainerService.HintSize="548.8,3256.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ContentCard]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="ui:UiElement">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ui:UiElement" Name="CurrentCardElement" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518.4,1740" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="547.2,3126.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="ClassName" />
                               <Variable x:TypeArguments="x:String" Name="Attribute" />
@@ -250,7 +299,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="Assign Class Name Of Current Element" sap:VirtualizedContainerService.HintSize="484.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                            <Assign DisplayName="Assign Class Name Of Current Element" sap:VirtualizedContainerService.HintSize="513.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[ClassName]</OutArgument>
                               </Assign.To>
@@ -258,7 +307,7 @@
                                 <InArgument x:TypeArguments="x:String">[CurrentCardElement.Get("class").ToString]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Assign sap2010:Annotation.AnnotationText="According to HTML layout of the website and its naming convention this attribute would have the values title, price, shipping for the product name, price and shipping, respectively." DisplayName="Assign Attribute Name Of Current Element" sap:VirtualizedContainerService.HintSize="484.8,173.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                            <Assign sap2010:Annotation.AnnotationText="According to HTML layout of the website and its naming convention this attribute would have the values title, price, shipping for the product name, price and shipping, respectively." DisplayName="Assign Attribute Name Of Current Element" sap:VirtualizedContainerService.HintSize="513.6,173.6" sap2010:WorkflowViewState.IdRef="Assign_2">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[Attribute]</OutArgument>
                               </Assign.To>
@@ -271,34 +320,151 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </Assign>
-                            <Switch x:TypeArguments="x:String" DisplayName="Switch According To Attribute Name" Expression="[Attribute]" sap:VirtualizedContainerService.HintSize="484.8,1392.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-                              <Switch.Default>
-                                <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="483.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                            <ui:IfElseIfV2 Condition="[Attribute = &quot;Price&quot;]" DisplayName="Else If Attribute Is Equal to Price" sap:VirtualizedContainerService.HintSize="513.6,2779.2" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                              <ui:IfElseIfV2.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,89.6" sap2010:WorkflowViewState.IdRef="Sequence_58">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </Sequence>
-                              </Switch.Default>
-                              <Sequence x:Key="price" DisplayName="Body" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="Sequence_40">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <Sequence sap2010:Annotation.AnnotationText="The price element has some nested tags inside of it. We are interested in the element with classname '*money-amount__fraction' which is a child of another element with classname '*price__current'" DisplayName="Extract Price Sequence" sap:VirtualizedContainerService.HintSize="449.6,108" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                              </ui:IfElseIfV2.Else>
+                              <ui:IfElseIfV2.ElseIfs>
+                                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Attribute = &quot;Shipping&quot;]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_3">
+                                    <ui:IfElseIfBlock.Then>
+                                      <Sequence sap2010:Annotation.AnnotationText="We are going to extract all the Shipping information but if there is an element with the class of '*additional_text', we are going to remove it from the it since it is irrelevant." DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,1059.2" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:String" Name="ShippingInfo" />
+                                          <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="ShippingDetails" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <uix:NGetText DisplayName="Get ShippingInfo Text" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478.4,169.6" sap2010:WorkflowViewState.IdRef="NGetText_13" InUiElement="[CurrentCardElement]" TextString="[ShippingInfo]" Version="V4" />
+                                        <ui:FindChildren Children="[ShippingDetails]" DisplayName="Find Shipping Details" Filter="&lt;webctrl class='*additional_text' /&gt;" sap:VirtualizedContainerService.HintSize="478.4,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_7" Scope="FIND_DESCENDANTS">
+                                          <ui:FindChildren.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[CurrentCardElement]" Id="93911b3a-d28d-4efe-b3a4-e4dc69e627b6">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                              <ui:Target.WaitForReady>
+                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                              </ui:Target.WaitForReady>
+                                            </ui:Target>
+                                          </ui:FindChildren.Target>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:FindChildren>
+                                        <If Condition="[ShippingDetails.count &gt; 0]" DisplayName="If There Are Shipping Details" sap:VirtualizedContainerService.HintSize="478.4,562.4" sap2010:WorkflowViewState.IdRef="If_11">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <If.Then>
+                                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,334.4" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="x:String" Name="StrShippingDetails" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <uix:NGetText DisplayName="Get Shipping Additional Details Text" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="433.6,169.6" sap2010:WorkflowViewState.IdRef="NGetText_14" InUiElement="[ShippingDetails.First]" TextString="[StrShippingDetails]" Version="V4" />
+                                              <Assign DisplayName="Removing ShippingDetails From ShippingInfo" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[ShippingInfo]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[ShippingInfo.Substring(0, ShippingInfo.IndexOf(StrShippingDetails)).Trim]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Sequence>
+                                          </If.Else>
+                                        </If>
+                                        <Assign DisplayName="Assign Shipping Info To Data Row" sap:VirtualizedContainerService.HintSize="478.4,104.8" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Object">[CurrentRow("Shipping")]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[ShippingInfo]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </Sequence>
+                                    </ui:IfElseIfBlock.Then>
+                                  </ui:IfElseIfBlock>
+                                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[Attribute = &quot;title&quot;]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_4">
+                                    <ui:IfElseIfBlock.Then>
+                                      <Sequence sap2010:Annotation.AnnotationText="The element holding the product name is an H2 Tag, so we also need to extract the url from it." DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,444.8" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:String" Name="ProductName" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <uix:NGetText DisplayName="Get Text Product Name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478.4,169.6" sap2010:WorkflowViewState.IdRef="NGetText_15" InUiElement="[CurrentCardElement]" TextString="[ProductName]" Version="V4" />
+                                        <ui:MultipleAssign DisplayName="Multiple Assign Product Name And Product Url To Current Row" sap:VirtualizedContainerService.HintSize="478.4,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                                          <ui:MultipleAssign.AssignOperations>
+                                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:Object">[CurrentRow("Name")]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">[ProductName]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:Object">[CurrentRow("Url")]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:Object">[CurrentCardElement.Get("href")]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                            </scg:List>
+                                          </ui:MultipleAssign.AssignOperations>
+                                        </ui:MultipleAssign>
+                                      </Sequence>
+                                    </ui:IfElseIfBlock.Then>
+                                  </ui:IfElseIfBlock>
+                                </sc:BindingList>
+                              </ui:IfElseIfV2.ElseIfs>
+                              <ui:IfElseIfV2.Then>
+                                <Sequence sap2010:Annotation.AnnotationText="The price element has some nested tags inside of it. We are interested in the element with classname '*money-amount__fraction' which is a child of another element with classname '*price__current'" DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,929.6" sap2010:WorkflowViewState.IdRef="Sequence_51">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="PriceTags" />
                                   </Sequence.Variables>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:FindChildren Children="[PriceTags]" DisplayName="Find Current Price Element" Filter="&lt;webctrl class='*price__current' /&gt;&lt;webctrl class='*money-amount__fraction' /&gt;" sap:VirtualizedContainerService.HintSize="416,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_3" Scope="FIND_DESCENDANTS">
+                                  <ui:FindChildren Children="[PriceTags]" DisplayName="Find Current Price Element" Filter="&lt;webctrl class='*price__current' /&gt;&lt;webctrl class='*money-amount__fraction' /&gt;" sap:VirtualizedContainerService.HintSize="478.4,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_6" Scope="FIND_DESCENDANTS">
                                     <ui:FindChildren.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[CurrentCardElement]" Id="93911b3a-d28d-4efe-b3a4-e4dc69e627b6">
                                         <ui:Target.TimeoutMS>
@@ -316,15 +482,15 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:FindChildren>
-                                  <If Condition="[PriceTags.count &gt; 0]" DisplayName="If Price Tags Were Found" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_6">
+                                  <If Condition="[PriceTags.count &gt; 0]" DisplayName="If Price Tags Were Found" sap:VirtualizedContainerService.HintSize="478.4,691.2" sap2010:WorkflowViewState.IdRef="If_10">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,388" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,334.4" sap2010:WorkflowViewState.IdRef="Sequence_52">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="ProductPrice" />
                                         </Sequence.Variables>
@@ -333,168 +499,36 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <uix:NGetText DisplayName="Get Price Value" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382.4,169.6" sap2010:WorkflowViewState.IdRef="NGetText_6" InUiElement="[PriceTags.First]" TextString="[ProductPrice]" Version="V4" />
-                                        <InvokeMethod DisplayName="Add Price To Data Row" sap:VirtualizedContainerService.HintSize="382.4,158.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="Add">
-                                          <InvokeMethod.TargetObject>
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[CurrentRow]</InArgument>
-                                          </InvokeMethod.TargetObject>
-                                          <InArgument x:TypeArguments="x:String">
-                                            <Literal x:TypeArguments="x:String">Price</Literal>
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String">
-                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ProductPrice" />
-                                          </InArgument>
-                                        </InvokeMethod>
-                                      </Sequence>
-                                    </If.Then>
-                                    <If.Else>
-                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_30">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </Sequence>
-                                    </If.Else>
-                                  </If>
-                                </Sequence>
-                              </Sequence>
-                              <Sequence x:Key="title" DisplayName="Body" sap:VirtualizedContainerService.HintSize="483.2,682.4" sap2010:WorkflowViewState.IdRef="Sequence_42">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <Sequence sap2010:Annotation.AnnotationText="The element holding the product name is an H2 Tag, so we also need to extract the url from it." DisplayName="Extract Name Sequence" sap:VirtualizedContainerService.HintSize="449.6,622.4" sap2010:WorkflowViewState.IdRef="Sequence_44">
-                                  <Sequence.Variables>
-                                    <Variable x:TypeArguments="x:String" Name="CurrentProductName" />
-                                  </Sequence.Variables>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <uix:NGetText DisplayName="Get Product Name Text" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,169.6" sap2010:WorkflowViewState.IdRef="NGetText_10" InUiElement="[CurrentCardElement]" TextString="[CurrentProductName]" Version="V4" />
-                                  <InvokeMethod DisplayName="Add Product Name To Data Row" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Add">
-                                    <InvokeMethod.TargetObject>
-                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[CurrentRow]</InArgument>
-                                    </InvokeMethod.TargetObject>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <Literal x:TypeArguments="x:String">Name</Literal>
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentProductName" />
-                                    </InArgument>
-                                  </InvokeMethod>
-                                  <InvokeMethod DisplayName="Add Product Url To Data Row" sap:VirtualizedContainerService.HintSize="416,158.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Add">
-                                    <InvokeMethod.TargetObject>
-                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[CurrentRow]</InArgument>
-                                    </InvokeMethod.TargetObject>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <Literal x:TypeArguments="x:String">Url</Literal>
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentCardElement.Get(&quot;href&quot;).ToString" />
-                                    </InArgument>
-                                  </InvokeMethod>
-                                </Sequence>
-                              </Sequence>
-                              <Sequence x:Key="shipping" DisplayName="Body" sap:VirtualizedContainerService.HintSize="483.2,168" sap2010:WorkflowViewState.IdRef="Sequence_43">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <Sequence sap2010:Annotation.AnnotationText="We are going to extract all the Shipping information but if there is an element with the class of '*additional_text', we are going to remove it from the it since it is irrelevant." DisplayName="Extract Shipping Sequence" sap:VirtualizedContainerService.HintSize="449.6,108" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                                  <Sequence.Variables>
-                                    <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="ShippingDetails" />
-                                    <Variable x:TypeArguments="x:String" Name="ShippingInfo" />
-                                  </Sequence.Variables>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <uix:NGetText DisplayName="Get ShippingInfo Text" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,169.6" sap2010:WorkflowViewState.IdRef="NGetText_9" InUiElement="[CurrentCardElement]" TextString="[ShippingInfo]" Version="V4" />
-                                  <ui:FindChildren Children="[ShippingDetails]" DisplayName="Find Shipping Details" Filter="&lt;webctrl class='*additional_text' /&gt;" sap:VirtualizedContainerService.HintSize="416,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_4" Scope="FIND_DESCENDANTS">
-                                    <ui:FindChildren.Target>
-                                      <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[CurrentCardElement]" Id="93911b3a-d28d-4efe-b3a4-e4dc69e627b6">
-                                        <ui:Target.TimeoutMS>
-                                          <InArgument x:TypeArguments="x:Int32" />
-                                        </ui:Target.TimeoutMS>
-                                        <ui:Target.WaitForReady>
-                                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                                        </ui:Target.WaitForReady>
-                                      </ui:Target>
-                                    </ui:FindChildren.Target>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:FindChildren>
-                                  <If Condition="[ShippingDetails.count &gt; 0]" DisplayName="If There Are Shipping Details" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="If_7">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <If.Then>
-                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,334.4" sap2010:WorkflowViewState.IdRef="Sequence_37">
-                                        <Sequence.Variables>
-                                          <Variable x:TypeArguments="x:String" Name="StrShippingDetails" />
-                                        </Sequence.Variables>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <uix:NGetText DisplayName="Get Shipping Additional Details Text" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="433.6,169.6" sap2010:WorkflowViewState.IdRef="NGetText_8" InUiElement="[ShippingDetails.First]" TextString="[StrShippingDetails]" Version="V4" />
-                                        <Assign DisplayName="Removing ShippingDetails From ShippingInfo" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                        <uix:NGetText DisplayName="Get Price Value" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="433.6,169.6" sap2010:WorkflowViewState.IdRef="NGetText_12" InUiElement="[PriceTags.First]" TextString="[ProductPrice]" Version="V4" />
+                                        <Assign DisplayName="Assign Price To Data Row" sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_7">
                                           <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[ShippingInfo]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Object">[CurrentRow("Price")]</OutArgument>
                                           </Assign.To>
                                           <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">[ShippingInfo.Substring(0, ShippingInfo.IndexOf(StrShippingDetails)).Trim]</InArgument>
+                                            <InArgument x:TypeArguments="x:Object">[ProductPrice]</InArgument>
                                           </Assign.Value>
                                         </Assign>
                                       </Sequence>
                                     </If.Then>
                                     <If.Else>
-                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,227.2" sap2010:WorkflowViewState.IdRef="Sequence_56">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
+                                        <ui:LogMessage DisplayName="Log No PriceTags Found" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Warn" Message="[&quot;No price tag was found for the &quot; + If(Not String.IsNullOrEmpty(CurrentRow(&quot;Name&quot;).ToString), &quot;product &quot; + CurrentRow(&quot;Name&quot;).ToString, &quot;current product&quot;)]" />
                                       </Sequence>
                                     </If.Else>
                                   </If>
-                                  <InvokeMethod DisplayName="Add Shipping Info To Data Row" sap:VirtualizedContainerService.HintSize="416,158.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Add">
-                                    <InvokeMethod.TargetObject>
-                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[CurrentRow]</InArgument>
-                                    </InvokeMethod.TargetObject>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <Literal x:TypeArguments="x:String">Shipping</Literal>
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ShippingInfo" />
-                                    </InArgument>
-                                  </InvokeMethod>
                                 </Sequence>
-                              </Sequence>
-                            </Switch>
+                              </ui:IfElseIfV2.Then>
+                            </ui:IfElseIfV2>
                           </Sequence>
                         </ActivityAction>
                       </ui:ForEach.Body>
                     </ui:ForEach>
-                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {CurrentRow(&quot;Name&quot;), CurrentRow(&quot;Price&quot;), If(CurrentRow.ContainsKey(&quot;Shipping&quot;), CurrentRow(&quot;Shipping&quot;), &quot;&quot;), CurrentRow(&quot;Url&quot;)}]" DataTable="[out_dt_ProductsData]" DisplayName="Add Data Row To Products Data Table" sap:VirtualizedContainerService.HintSize="334.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                    <ui:AddDataRow ArrayRow="{x:Null}" DataRow="[CurrentRow]" DataTable="[out_dt_ProductsData]" DisplayName="Add Data Row To Products Data Table" sap:VirtualizedContainerService.HintSize="548.8,211.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEach.Body>
