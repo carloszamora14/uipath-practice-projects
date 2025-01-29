@@ -6,6 +6,7 @@
   "dependencies": {
     "UiPath.Excel.Activities": "[2.25.1-preview]",
     "UiPath.System.Activities": "[24.10.7]",
+    "UiPath.Testing.Activities": "[24.10.1]",
     "UiPath.UIAutomation.Activities": "[24.12.4-preview]"
   },
   "webServices": [],
@@ -41,7 +42,16 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "fb39115b-3511-40b9-ae70-a319d5c4f33a",
+        "dataVariationFilePath": ".variations\\ProductNames_Sheet1.json",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TC_ProcessProducts.xaml"
+      }
+    ],
     "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
